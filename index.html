@@ -5,88 +5,88 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Convite</title>
 <style>
-  body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin-top: 100px;
-    background-color: #f0f0f0;
-  }
-  #conteudo {
-    padding: 20px;
-  }
-  button {
-    margin: 10px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border: 2px solid #007bff;
-    border-radius: 5px;
-    background-color: #007bff;
-    color: white;
-    transition: background-color 0.3s, transform 0.3s;
-  }
-  button:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
-  }
-  #nao {
-    position: absolute;
-    transition: top 0.5s, left 0.5s;
-  }
-  #mensagem {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border: 4px dashed red;
-    padding: 20px;
-    z-index: 1000;
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    animation: piscar 1s infinite;
-  }
-  @keyframes piscar {
-    0%, 100% { border-color: red; }
-    50% { border-color: blue; }
-  }
-  @media (max-width: 600px) {
-    /* Estilos para dispositivos móveis */
     body {
-      margin-top: 50px; /* Espaçamento menor no topo */
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 100px;
+        background-color: #f0f0f0;
     }
     #conteudo {
-      padding: 10px; /* Padding menor */
+        padding: 20px;
     }
     button {
-      font-size: 14px; /* Tamanho de fonte menor */
+        margin: 10px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        border: 2px solid #007bff;
+        border-radius: 5px;
+        background-color: #007bff;
+        color: white;
+        transition: background-color 0.3s, transform 0.3s;
     }
-  }
+    button:hover {
+        background-color: #0056b3;
+        transform: scale(1.05);
+    }
+    #nao {
+        position: absolute;
+        transition: top 0.5s, left 0.5s;
+    }
+    #mensagem {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: 4px dashed red;
+        padding: 20px;
+        z-index: 1000;
+        background-color: white;
+        box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        animation: piscar 1s infinite;
+    }
+    @keyframes piscar {
+        0%, 100% { border-color: red; }
+        50% { border-color: blue; }
+    }
+    @media (max-width: 600px) {
+        /* Estilos para dispositivos móveis */
+        body {
+        margin-top: 50px; /* Espaçamento menor no topo */
+        }
+        #conteudo {
+        padding: 10px; /* Padding menor */
+        }
+        button {
+        font-size: 14px; /* Tamanho de fonte menor */
+        }
+    }
 </style>
 </head>
 <body>
-  <div id="conteudo">
-    <h2>Aceita o convite?</h2>
-    <button id="sim">SIM</button>
-    <button id="nao">NÃO</button>
-  </div>
-  <p id="mensagem">Ótimo, sabia que não ia fazer essa desfeita</p>
+    <div id="conteudo">
+        <h2>Aceita o convite?</h2>
+        <button id="sim">SIM</button>
+        <button id="nao">NÃO</button>
+    </div>
+    <p id="mensagem">Ótimo, sabia que não ia fazer essa desfeita</p>
 
-  <script>
+<script>
     var btnSim = document.getElementById('sim');
     var btnNao = document.getElementById('nao');
     var mensagem = document.getElementById('mensagem');
     var conteudo = document.getElementById('conteudo');
 
     btnSim.onclick = function() {
-      conteudo.style.display = 'none';
-      mensagem.style.display = 'block';
+        conteudo.style.display = 'none';
+        mensagem.style.display = 'block';
     };
 
     btnNao.onmouseover = function() {
-      this.style.top = Math.random() * window.innerHeight + 'px';
-      this.style.left = Math.random() * window.innerWidth + 'px';
+        this.style.top = Math.random() * window.innerHeight + 'px';
+        this.style.left = Math.random() * window.innerWidth + 'px';
     };
-  </script>
+</script>
 </body>
 </html>
