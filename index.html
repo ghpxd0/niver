@@ -10,6 +10,9 @@
         text-align: center;
         margin-top: 100px;
         background-color: #f0f0f0;
+        max-width: 100%;
+        max-height: 100%;
+        align-items: center;
     }
     #conteudo {
         padding: 20px;
@@ -70,7 +73,7 @@
         <button id="sim">SIM</button>
         <button id="nao">NÃO</button>
     </div>
-    <p id="mensagem">Ótimo, sabia que não ia fazer essa desfeita</p>
+    <p id="mensagem">Ótimo, sabia que não ia fazer essa desfeita, estou lhe aguardando então!</p>
 
 <script>
     var btnSim = document.getElementById('sim');
@@ -83,10 +86,13 @@
         mensagem.style.display = 'block';
     };
 
-    btnNao.onmouseover = function() {
+    btnNao.onmouseover = function(event) {
+        event.preventDefault();
         this.style.top = Math.random() * window.innerHeight + 'px';
         this.style.left = Math.random() * window.innerWidth + 'px';
-    };
+        this.blur(); // Isso remove o foco do botão após mover
+};
+
 </script>
 </body>
 </html>
