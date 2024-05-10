@@ -1,44 +1,77 @@
+<!DOCTYPE html>
 <html lang="pt">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Convite</title>
 <style>
+  body {
+    background-image: url(/niver.jpg);
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 100px;
+    background-color: #f0f0f0;
+  }
+  #conteudo {
+    padding: 20px;
+  }
+  button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+  }
+  #nao {
+    position: absolute;
+    transition: top 0.5s, left 0.5s;
+  }
+  #mensagem {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 4px dashed red;
+    padding: 20px;
+    z-index: 1000;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    animation: piscar 1s infinite;
+  }
+  @keyframes piscar {
+    0%, 100% { border-color: red; }
+    50% { border-color: blue; }
+  }
+  @media (max-width: 600px) {
+    /* Estilos para dispositivos móveis */
     body {
-        background-image: url(niver.jpg);
-        font-family: Arial, sans-serif;
-        text-align: center;
-        margin-top: 100px;
+      margin-top: 50px; /* Espaçamento menor no topo */
     }
-    #nao {
-        position: absolute;
-        transition: top 0.5s, left 0.5s; /* Transições suaves */
+    #conteudo {
+      padding: 10px; /* Padding menor */
     }
-    #mensagem {
-        display: none; /* Inicialmente escondido */
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        border: 2px solid black;
-        padding: 20px;
-        z-index: 1000;
-        animation: piscar 1s infinite;
+    button {
+      font-size: 14px; /* Tamanho de fonte menor */
     }
-    @keyframes piscar {
-        0%, 100% { border-color: black; }
-        50% { border-color: red; } /* Apenas as bordas piscam */
-    }
+  }
 </style>
-
 </head>
 <body>
-    <div id="conteudo">
-        <h2>Aceita o convite?</h2>
-        <button id="sim">SIM</button>
-        <button id="nao">NÃO</button>
-    </div>
-    <p id="mensagem">Ótimo, sabia que não ia fazer essa desfeita, estou lhe aguardando então! Ja separa uma playlist pós é no centro :)</p>
+  <div id="conteudo">
+    <h2>Aceita o convite?</h2>
+    <button id="sim">SIM</button>
+    <button id="nao">NÃO</button>
+  </div>
+  <p id="mensagem">Ótimo, sabia que não ia fazer essa desfeita, estou lhe aguardando então! Ja separa uma playlist pós é no centro :)</p>
 
   <script>
     var btnSim = document.getElementById('sim');
@@ -47,13 +80,13 @@
     var conteudo = document.getElementById('conteudo');
 
     btnSim.onclick = function() {
-        conteudo.style.display = 'none'; // Esconde o conteúdo
-        mensagem.style.display = 'block'; // Mostra a mensagem piscante
+      conteudo.style.display = 'none';
+      mensagem.style.display = 'block';
     };
 
     btnNao.onmouseover = function() {
-        this.style.top = Math.random() * window.innerHeight + 'px';
-        this.style.left = Math.random() * window.innerWidth + 'px';
+      this.style.top = Math.random() * window.innerHeight + 'px';
+      this.style.left = Math.random() * window.innerWidth + 'px';
     };
   </script>
 </body>
